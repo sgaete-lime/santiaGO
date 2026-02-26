@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+
+interface Link {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  links: Link[];
+  reversed?: boolean; // If true, image goes on the right
+}
+
+const { title, description, image, imageAlt, links, reversed = false } = Astro.props;
+---
+
+<div class={`project-item ${reversed ? 'reversed' : ''}`}>
+  <div class="image-container">
+    <Image src={image} alt={imageAlt} class="project-img" />
+    </div>
+
+  <div class="text-container">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    
+    <div class="project-links">
+      {links.map((link) => (
+        <a href={link.url} class="hand-drawn-button">
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .project-item {
+    display: flex;
+    flex-direction: row; /* Default: Image Left, Text Right */
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+  }
+
+  .project-item.reversed {
+    flex-direction: row-reverse;
+  }
+
+  .image-container {
+    flex: 1;
+    cursor: pointer; /* Ready for your slideshow click */
+  }
+
+  .project-img {
+    width: 100%;
+    height: auto;
+    border: 2px solid white; /* Placeholder until you add your drawn borders */
+  }
+
+  .text-container {
+    flex: 1.2;
+  }
+
+  h3 { margin: 0 0 0.5rem 0; font-size: 1.4rem; }
+  p { font-size: 0.9rem; line-height: 1.4; color: #ccc; }
+
+  .project-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .hand-drawn-button {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid white; /* Switch to your mask-image trick later! */
+    transition: transform 0.0s ease;
+  }
+
+  .hand-drawn-button:hover {
+    transform: rotate(-2deg) scale(1.05);
+  }
+
+  /* On actual small phones, we stack them anyway */
+  @media (max-width: 400px) {
+    .project-item, .project-item.reversed {
+      flex-direction: column;
+    }
+  }
+</style>

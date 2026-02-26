@@ -1,0 +1,28 @@
+---
+import dividerImg from '../assets/Webline.png';
+---         
+<div class="divider" style={`--line-url: url(${dividerImg.src});`}></div>
+
+<style>
+  .divider {
+    height: 10px; /* Thickness of your drawing */
+    width: 100%;
+    margin: -0.2rem 0;
+
+    /* 1. Choose your color here! */
+    background-color: var(--accent-color, #FDE882);
+
+    /* 2. Use the image as a mask/stencil */
+    -webkit-mask-image: var(--line-url);
+    mask-image: var(--line-url);
+
+    /* 3. This keeps your repeat-x and contain settings */
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+  }
+  .divider.flipped {
+  transform: scaleX(-1);
+}
+</style>

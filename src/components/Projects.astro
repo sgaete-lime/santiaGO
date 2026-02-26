@@ -1,0 +1,38 @@
+---
+import ProjectItem from './ProjectItem.astro';
+import thumb1 from '../assets/Kronlogo.png';
+import thumb2 from '../assets/Kronlogo.png';
+---
+
+<section id="projects">
+  <h2>Selected Works</h2>
+
+  <ProjectItem 
+    title="Cool Game Project"
+    description="A 2D platformer built in Unity with custom shaders."
+    image={thumb1}
+    imageAlt="Screenshot of gameplay"
+    links={[
+      { label: 'Play Game', url: '#' },
+      { label: 'Source Code', url: '#' }
+    ]}
+  />
+
+  <ProjectItem 
+    title="VTuber Illustration"
+    description="Hand-drawn character art with motion graphics."
+    image={thumb2}
+    imageAlt="Character art piece"
+    reversed={false} 
+    links={[
+      { label: 'View Art', url: '#' },
+      { label: 'Process Video', url: '#' }
+    ]}
+  />
+</section>
+
+<style>
+  section {
+    padding-left: 2rem;
+  }
+</style>
