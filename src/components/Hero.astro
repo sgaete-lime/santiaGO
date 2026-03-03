@@ -1,20 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import profilePhoto from '../assets/oldheadshot.jpg';
-import cornerIcon from '../assets/pfpedit1.png'; // Your new small image
+import cornerIcon from '../assets/pfpedit1.png'; 
 ---
 
 <section id="hero" class="hero-container">
   <div class="hero-layout">
     
     <div class="text-side">
-      <h1>Your Name</h1>
-      <p>Game Designer | Artist | Developer</p>
+      <h1 class="hero-name">Santiago Gaete</h1>
+      <p class="hero-title">Technical Game Designer</p>
+      <p class="hero-title">USC Games</p>
       
       <nav class="hero-nav">
         <a href="#about" class="nav-button">About</a>
         <a href="#projects" class="nav-button">Projects</a>
-        <a href="#portfolio" class="nav-button">Portfolio</a>
         <a href="#contact" class="nav-button">Contact</a>
       </nav>
     </div>
@@ -22,7 +22,6 @@ import cornerIcon from '../assets/pfpedit1.png'; // Your new small image
     <div class="image-side">
       <div class="pfp-wrapper">
         <Image src={profilePhoto} alt="Profile Picture" class="profile-pic" />
-        
         <Image src={cornerIcon} alt="" class="corner-overlay" />
       </div>
     </div>
@@ -32,77 +31,112 @@ import cornerIcon from '../assets/pfpedit1.png'; // Your new small image
 
 <style>
   .hero-container {
-    min-height: 30vh; /* Bumped slightly for the side-by-side layout */
+    /* 1. Ensure the container itself is centered in the viewport */
+    min-height: 40vh; 
+    padding: 0rem 0; 
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #1a1a1a;
-    
+    width: 100%;
   }
 
   .hero-layout {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 4rem;
-    
-    width: 80%;
+    /* 2. This forces both columns to share the same horizontal center line */
+    align-items: center; 
+    justify-content: center;
+    gap: 6rem;
+    width: 100%;
   }
 
-  /* Text Styling */
+  /* Text Side Adjustments */
   .text-side {
-    flex: 1;
+    flex: 0 1 auto;
     text-align: left;
+    font-family: 'Kronshrink', Helvetica, Arial, sans-serif;
+  }
+
+    p {
+      font-size-adjust: 0.7;
+    }
+
+  .hero-name {
+    /* 3. CRUCIAL: Remove default margins that push the text block down */
+    margin: 0; 
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+
+  .hero-title {
+    margin: 0.5rem 0 0 0; /* Only a tiny bit of space between name and title */
+    font-size: 1.1rem;
+    opacity: 0.8;
   }
 
   .hero-nav {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap; /* Keeps it clean on smaller screens */
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
-  /* Image Styling & Overlay Logic */
+  /* Link Styling */
+  .nav-button {
+    text-decoration: none;
+    color: white !important; 
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .nav-button:hover {
+    background-color: var(--accent);
+    color: black !important;
+    border-color: var(--accent);
+  }
+
+  /* Image Side Adjustments */
   .image-side {
     flex-shrink: 0;
-    padding-right: 1rem;
+    /* 4. Remove any ghost spacing from the image block */
+    line-height: 0; 
   }
 
   .pfp-wrapper {
-    position: relative; /* This is the anchor point for the absolute overlay */
+    position: relative;
     width: 180px;
-    height: 180px;
+    height: 240px; /* Taller portrait look */
   }
 
   .profile-pic {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 2px solid white;
+    /* 5. Block display removes the gap at the bottom of images */
+    display: block; 
   }
 
   .corner-overlay {
     position: absolute;
-    bottom: -30px; /* Adjust these to move your 'sticker' around */
-    right: -30px;
-    width: 100px;   /* Size of your corner doodle */
-    rotate: -deg;
+    bottom: -15px;
+    right: -25px;
+    rotate:6deg;
+    width: 90px;
     height: auto;
-    filter: drop-shadow(-2px -2px 0px #ffffff); /* Gives it a little 'pop' */
-        filter: drop-shadow(2px 2px 0px #ffffff); /* Gives it a little 'pop' */
+    z-index: 10;
+    filter: drop-shadow(2px 2px 0px white) drop-shadow(-2px -2px 0px white) 
+            drop-shadow(2px -2px 0px white) drop-shadow(-2px 2px 0px white);
   }
 
-  /* Responsive: Stack them on mobile */
   @media (max-width: 768px) {
     .hero-layout {
       flex-direction: column-reverse;
       text-align: center;
-      gap: 2rem;
+      gap: 3rem;
     }
-    .text-side {
-      text-align: center;
-    }
-    .hero-nav {
-      justify-content: center;
-    }
+    .text-side { text-align: center; }
+    .hero-nav { justify-content: center; }
   }
 </style>

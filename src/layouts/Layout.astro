@@ -29,11 +29,20 @@ const { title } = Astro.props;
 <style is:global>
     :root {
         --accent: #F49677;
-        --background: #0a0a0a;
+        --background: #2d1c13;
     }
 
     section {
         padding: 2rem;
+    }
+
+    @font-face {
+        font-family: 'Kronshrink'; /* A name for your font */
+        src: url('fonts/Kronshrink-Regular.otf') format('otf'),
+        url('fonts/Kronshrink-Regular.otf') format('otf');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap; /* Helps prevent render-blocking */
     }
     
     html, body {
@@ -46,7 +55,7 @@ const { title } = Astro.props;
     }
 
     main {
-        max-width: 750px;
+        max-width: 850px;
         width: 100%;
         margin: 0 auto; /* Perfect centering */
         min-height: 100vh;
@@ -54,7 +63,7 @@ const { title } = Astro.props;
         /* 1. This makes the lines anchor to the edges of THIS box */
         position: relative; 
         
-        background: var(--background);
+        background: #201f1f;
         padding: 0 0rem;
     }
 

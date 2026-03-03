@@ -1,15 +1,60 @@
 ---
-// Logic (if any) goes here
+import BaseLayout from '../layouts/Layout.astro'
+
+const csgaLink = "https://www.cs.usc.edu/academic-programs/undergrad/computer-science-games/"
+const persMail = "mailto:sgaetepe@hotmail.com"
+const uscMail = "mailto:gaete@usc.edu"
+const bestoLink = "https://www.linkedin.com/company/besto-games/"
+const itchLink = "https://cloudlime.itch.io/"
+const uscGM = "https://games.usc.edu/ourprogram"
+const smugmug = "https://shsphoto.smugmug.com/Fall-2024/Santiago-Gaete"
+const animLink = "https://animation.usc.edu/program-minor/"
 ---
+
 <section id="about">
-	<h2>About Me</h2>
-	<p>Aspiring dick sucker at penis central...</p>
+  <h1>about</h1>
+  <h3>My name's Santi, and I love to make things. My goal is to make cool things that inspire other people to make even cooler things. The best medium for that, in my humble opinion, is video games!</h3>
+  
+  <h3>I'm a student at the University of Southern California as a major in
+    <a href={csgaLink} target="_blank">Computer Science Games</a> with a minor in <a href={animLink} target="_blank">3D Animation</a>.
+  </h3>
+  
+  <h3>You can contact me at <a href={persMail} target="_blank">sgaetepe@hotmail.com</a> or 
+    <a href={uscMail} target="_blank">gaete@usc.edu</a> :)
+  </h3>
+
+  <div class="divider"></div>
 </section>
 
 <style>
-	h2 { font-size: 3rem; color: var(--accent); 
-     }
-    section {
-        padding: 2rem;
-    }
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    align-items: center; /* Centering the containers */
+    text-align: center;   /* Centering the text */
+  }
+
+  h3 {
+    font-weight: 300;
+    line-height: 1.6;
+    padding-left:3rem;
+    padding-right:3rem;
+  }
+
+  a {
+    background-color: #cdbd8352;
+    color:white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.2s;
+  }
+
+  a:hover {
+    background-color: #b3a77acc;
+  }
 </style>

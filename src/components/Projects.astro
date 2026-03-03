@@ -1,33 +1,52 @@
 ---
 import ProjectItem from './ProjectItem.astro';
-import thumb1 from '../assets/Kronlogo.png';
-import thumb2 from '../assets/Kronlogo.png';
+import kroshrink from '../assets/Kronlogo.png';
+import tamadoki from '../assets/tamadokiCover2.png';
 ---
 
 <section id="projects">
   <h2>Selected Works</h2>
 
   <ProjectItem 
-    title="Cool Game Project"
-    description="A 2D platformer built in Unity with custom shaders."
-    image={thumb1}
-    imageAlt="Screenshot of gameplay"
-    links={[
-      { label: 'Play Game', url: '#' },
-      { label: 'Source Code', url: '#' }
+    title="Kronii, I Shrunk The Holos!"
+    italicIntro="Kronii and the rest have been turned into pint-sized pipsqueaks, and are stuck in a 10-second time loop to boot! Use her powers to scale Kronii's tower and find out who's responsible in this puzzle platformer!"
+    description="A time-loop puzzle platforming adventure! This is a jam project I developed on my own in two weeks, doing the all the art, programming, and design."
+    mainImage={kroshrink}
+    mainImageAlt="Main Thumbnail"
+    mainCaption="Click me to watch the trailer!"
+    
+    gallery={[
+        { 
+            type: 'video', 
+            src: 'https://www.youtube.com/embed/YYfFEstUblQ', 
+            caption: 'The trailer for the project.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/screenshot1.png', 
+            caption: 'Early concept sketches for character select.' 
+        }
     ]}
+    links={[{ label: 'itch.io', url: 'https://cloudlime.itch.io/kronii-i-shrunk-the-holos' }]}
   />
 
   <ProjectItem 
-    title="VTuber Illustration"
-    description="Hand-drawn character art with motion graphics."
-    image={thumb2}
-    imageAlt="Character art piece"
-    reversed={false} 
-    links={[
-      { label: 'View Art', url: '#' },
-      { label: 'Process Video', url: '#' }
+    title="Tamadoki"
+    italicIntro="Train Doki's gunslinging, music, and tomato skills over the summer and keep track of your work calendar! 
+    Based on your choices throughout the game, chain reactions will occur--changing the outcome of Doki’s story!"
+    description="A life simulation pet trainer for a two-week game jam, with a team of 3 others. I was in charge of game design, UI/UX, art direction, and writing!"
+    mainImage={tamadoki}
+    mainImageAlt="Main Thumbnail"
+    mainCaption="Click me to see screenshots!"
+    
+    gallery={[
+        { 
+            type: 'image', 
+            src: '/assets/screenshot1.png',   
+            caption: 'Early concept sketches for character select.' 
+        }
     ]}
+    links={[{ label: 'itch.io', url: 'https://cloudlime.itch.io/kronii-i-shrunk-the-holos' }]}
   />
 </section>
 
