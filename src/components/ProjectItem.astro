@@ -1,9 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import ProjectLightbox from './ProjectLightbox.svelte';
-import dividerImg from '../assets/Webline.png'; // Reusing for hand-drawn buttons
 
-interface Link { label: string; url: string; }
 interface MediaItem { type: 'image' | 'video'; src: string; caption?: string; }
 
 interface Props {
@@ -13,7 +11,7 @@ interface Props {
   mainImage: ImageMetadata;
   mainImageAlt: string;
   mainCaption?: string;
-  links: Link[];
+  primaryLink: string; // Changed: Just one link for the title
   gallery: MediaItem[];
   reversed?: boolean;
 }
@@ -25,11 +23,15 @@ const {
   mainImage, 
   mainImageAlt, 
   mainCaption, 
-  links, 
+  primaryLink, 
   gallery, 
   reversed = false 
 } = Astro.props;
 ---
+
+<head>
+    <link href="https://db.onlinewebfonts.com/c/1b3f9cb78376a36884f3908f37a42c91?family=Tiempos+Text+Regular" rel="stylesheet">
+</head>
 
 <div class={`project-item ${reversed ? 'reversed' : ''}`}>
   <div class="image-side">
@@ -44,21 +46,14 @@ const {
   </div>
 
   <div class="text-side">
-    <h3>{title}</h3>
+    <h3>
+      <a href={primaryLink} target="_blank" class="title-link">{title}</a>
+    </h3>
     <p>
       {italicIntro && <span class="intro">{italicIntro} </span>}
-      <br>
-      <br>
+      <br><br>
       {description}
     </p>
-    
-    <div class="project-links">
-      {links.map((link) => (
-        <a href={link.url} class="hand-drawn-button" style={`--line-url: url(${dividerImg.src});`}>
-          {link.label}
-        </a>
-      ))}
-    </div>
   </div>
 </div>
 
@@ -66,26 +61,45 @@ const {
   .project-item {
     display: flex;
     gap: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3.5rem;
     align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Swaps sides for variety */
   .project-item.reversed { flex-direction: row-reverse; }
 
   .image-side { 
-    flex: 0 0 320px; /* Forces width to exactly 200px */
+    flex: 0 0 320px; 
     min-width: 0;
   }
 
   .text-side { 
     flex: 1; 
-    min-width: 0; /* Prevents text from pushing past the right margin */
+    min-width: 0; 
+    margin-top:-0.5rem;
     overflow-wrap: break-word;
-    margin-right:4rem;
-    font-family: 'Kronshrink', Helvetica, Arial, sans-serif;
+    margin-right: 4rem;
+    font-family: "Tiempos Text Regular", Helvetica, Arial, sans-serif;
+  }
+
+  /* Link styling for the Title */
+  .title-link {
+    text-decoration: none;
+    color: var(--accent);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-family: "Kronshrink", Helvetica, Arial, sans-serif;
+    background-color:#b9606049;
+    padding-top:3px;
+    padding-right:3px;
+    padding-left:3px;
+  }
+
+  .title-link:hover {
+    opacity: 1;
+    background-color: #d27b72a8;
+    border-bottom-color: var(--accent);
   }
 
   .img-wrapper {
@@ -96,8 +110,13 @@ const {
 
   .img-frame {
     padding: 3px;
-    background-color: var(--accent); /* Thin peach border around image */
+    background-color: var(--accent);
     line-height: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .img-frame:hover {
+    transform: scale(1.025);
   }
 
   .project-img {
@@ -110,14 +129,13 @@ const {
     font-size: 0.95rem;
     opacity: 0.7;
     font-style: italic;
-    line-height: 0.8;
     align-self: center;
+    font-family: "Tiempos Text Regular", Helvetica, Arial, sans-serif;
   }
 
   h3 { 
     margin: 0 0 0.5rem 0; 
     font-size: 1.8rem; 
-    color: var(--accent);
   }
   
   p { 
@@ -129,40 +147,10 @@ const {
 
   .intro {
     font-style: italic;
-    font-size:0.99rem;
-    line-height: 0.2;
-
-    color: #eee; /* Slightly brighter than main text */
+    font-size: 0.99rem;
+    color: #eee;
   }
 
-  .project-links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: 1.2rem;
-  }
-
-  /* The "Hand-Drawn" Button Style */
-  .hand-drawn-button {
-    position: relative;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: transform 0.1s ease;
-    
-    /* Using a thin border and our mask logic for the "line" feel */
-    border: 1px solid var(--accent);
-  }
-
-  .hand-drawn-button:hover {
-    transform: rotate(-1.5deg) scale(1.05);
-    background-color: var(--accent);
-    color: black;
-  }
-
-  /* Stack layout on mobile */
   @media (max-width: 500px) {
     .project-item, .project-item.reversed {
       flex-direction: column;
@@ -171,6 +159,9 @@ const {
     .image-side {
       width: 100%;
       flex: none;
+    }
+    .text-side {
+        margin-right: 0;
     }
   }
 </style>

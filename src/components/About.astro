@@ -7,18 +7,30 @@ const uscMail = "mailto:gaete@usc.edu"
 const bestoLink = "https://www.linkedin.com/company/besto-games/"
 const itchLink = "https://cloudlime.itch.io/"
 const uscGM = "https://games.usc.edu/ourprogram"
-const smugmug = "https://shsphoto.smugmug.com/Fall-2024/Santiago-Gaete"
+const smugmug = "https://shsphoto.smugmug.com/20242025/Fall-2024/Santiago-Gaete"
 const animLink = "https://animation.usc.edu/program-minor/"
 ---
 
+
+<head>
+    <link href="https://db.onlinewebfonts.com/c/1b3f9cb78376a36884f3908f37a42c91?family=Tiempos+Text+Regular" rel="stylesheet">
+</head>
 <section id="about">
-  <h1>about</h1>
+  <h1>ABOUT</h1>
   <h3>My name's Santi, and I love to make things. My goal is to make cool things that inspire other people to make even cooler things. The best medium for that, in my humble opinion, is video games!</h3>
   
-  <h3>I'm a student at the University of Southern California as a major in
-    <a href={csgaLink} target="_blank">Computer Science Games</a> with a minor in <a href={animLink} target="_blank">3D Animation</a>.
+  <h3>I'm a student at the University of Southern California in Los Angeles as a major in
+    <a href={csgaLink} target="_blank">Computer Science Games</a> with a minor in <a href={animLink} target="_blank">3D Animation</a>. I live in Carlsbad, but I grew up in Portland, Oregon. I'm also Chilean-American, and yes, I'm from Santiago...
   </h3>
+  <h3>I'm VERY interested in technical game design, tech art, and game production, but I've been working hard to take advantage of my time as a student to learn to wear as many hats as possible.</h3>
   
+  <h3 id="list">I have a lot of hobbies:</h3>
+  <ul>
+    <li>I make art, merchandise, and other custom-made toys and collectibles under my small brand, <a href={animLink} target="_blank">cloudlime</a>. I'm a really big on DIY self-manufacturing, which is why I'm also a Student Worker at the Baum Family Maker Space at USC.</li>
+    <li>I play Japanese taiko drums as part of Kazan Taiko, USC's ensemble group. I also handle our merchandise, along with our...</li>
+    <li>PHOTOGRAPHY!!! Simple as that. Here's a recent <a href={smugmug} target="_blank">album</a>!</li>
+</ul>
+    <h3>I'm also into distance running, character design, Pokemon VGC, statistics, trying to write novels, printmaking, beavers, pixel art, Blender, woodworking, collecting plushies, singing, and playing Guess Who. Among many other things.</h3>
   <h3>You can contact me at <a href={persMail} target="_blank">sgaetepe@hotmail.com</a> or 
     <a href={uscMail} target="_blank">gaete@usc.edu</a> :)
   </h3>
@@ -29,21 +41,38 @@ const animLink = "https://animation.usc.edu/program-minor/"
 <style>
   section {
     display: flex;
+    margin-top:-2rem;
     flex-direction: column;
   }
 
   h1 {
+    font-family: "Kronshrink";
     font-size: 2.5rem;
     color: var(--accent);
     align-items: center; /* Centering the containers */
     text-align: center;   /* Centering the text */
   }
 
+  #list {
+    margin-bottom: -0.5rem;
+  }
+
   h3 {
+    font-family: "Tiempos Text Regular";
     font-weight: 300;
+    font-size:1.1rem;
     line-height: 1.6;
     padding-left:3rem;
     padding-right:3rem;
+  }
+
+  li {
+    font-family: "Tiempos Text Regular";
+    font-weight: 300;
+    line-height: 1.6;
+    margin-left:3rem;
+    margin-right:5rem;
+    margin-bottom: 0.3rem;
   }
 
   a {

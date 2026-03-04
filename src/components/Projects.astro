@@ -2,13 +2,17 @@
 import ProjectItem from './ProjectItem.astro';
 import kroshrink from '../assets/Kronlogo.png';
 import tamadoki from '../assets/tamadokiCover2.png';
+import isd from '../assets/isd-0.png'
+import moom from '../assets/moom-0.png';
+import mmm from '../assets/mmm-0.png';
 ---
-
+<h1>PROJECTS</h1>
 <section id="projects">
-  <h2>Selected Works</h2>
+  
 
   <ProjectItem 
     title="Kronii, I Shrunk The Holos!"
+    primaryLink='https://cloudlime.itch.io/kronii-i-shrunk-the-holos'
     italicIntro="Kronii and the rest have been turned into pint-sized pipsqueaks, and are stuck in a 10-second time loop to boot! Use her powers to scale Kronii's tower and find out who's responsible in this puzzle platformer!"
     description="A time-loop puzzle platforming adventure! This is a jam project I developed on my own in two weeks, doing the all the art, programming, and design."
     mainImage={kroshrink}
@@ -27,14 +31,15 @@ import tamadoki from '../assets/tamadokiCover2.png';
             caption: 'Early concept sketches for character select.' 
         }
     ]}
-    links={[{ label: 'itch.io', url: 'https://cloudlime.itch.io/kronii-i-shrunk-the-holos' }]}
+    
   />
 
   <ProjectItem 
     title="Tamadoki"
+    primaryLink="https://onethateatyou.itch.io/tamadoki"
     italicIntro="Train Doki's gunslinging, music, and tomato skills over the summer and keep track of your work calendar! 
     Based on your choices throughout the game, chain reactions will occur--changing the outcome of Doki’s story!"
-    description="A life simulation pet trainer for a two-week game jam, with a team of 3 others. I was in charge of game design, UI/UX, art direction, and writing!"
+    description="A life simulation pet trainer for a two-week game jam, made with a team of 3 others. I was in charge of game design, UI/UX, art direction, and writing!"
     mainImage={tamadoki}
     mainImageAlt="Main Thumbnail"
     mainCaption="Click me to see screenshots!"
@@ -46,12 +51,91 @@ import tamadoki from '../assets/tamadokiCover2.png';
             caption: 'Early concept sketches for character select.' 
         }
     ]}
-    links={[{ label: 'itch.io', url: 'https://cloudlime.itch.io/kronii-i-shrunk-the-holos' }]}
+  />
+
+  <ProjectItem 
+    title="Idol Showdown"
+    primaryLink="https://store.steampowered.com/app/1742020/Idol_Showdown/"
+    italicIntro="Made by hololive fans, for hololive fans. Idol Showdown is the definitive fan-made hololive fighting game experience, powered by rollback netcode."
+    description="A free-to-play fighting game by Besto Games, with over 1.2 million downloads on Steam. I helped with art sprites and marketing, handling countless character animations and a few entire game trailers!"
+    mainImage={isd}
+    mainImageAlt="Main Thumbnail"
+    mainCaption="Click me to watch the trailer!"
+    
+    gallery={[
+        { 
+            type: 'video', 
+            src: 'https://www.youtube.com/embed/_9wt9ByzXDU?si=4foXG2XO8fwEG5VS', 
+            caption: 'A trailer for BLAZING: BALL BASH, our summer gamemode, which I edited and produced!'
+        },
+        { 
+            type: 'video', 
+            src: 'https://www.youtube.com/embed/Kdl0uo7G_ow?si=KaZM5yt3ADMs479p', 
+            caption: 'ANOTHER trailer I edited and produced!' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/screenshot1.png',   
+            caption: 'Early concept sketches for character select.' 
+        }
+    ]}
+  />
+
+  <ProjectItem 
+    title="MOOM: Last Promise"
+    primaryLink="https://bestogameteam.itch.io/moom-last-promise"
+    italicIntro="The remnants of civilization... What will you have at the end of time? A Mumei 3D platforming metroidvania."
+    description="Developed in 1 month as a graduation gift. I worked as an assistant producer in a team of 12 people, doing level and movement design, alongside all UI design and general art pipeline management. I also directed and edited the game's trailer myself!"
+    mainImage={moom}
+    mainImageAlt="Main Thumbnail"
+    mainCaption="Click me to watch the trailer!"
+    
+    gallery={[
+        { 
+            type: 'video', 
+            src: 'https://www.youtube.com/embed/U74IoaCFNGc?si=e-OAgg_GzrKj-nUC', 
+            caption: 'The game trailer, directed and edited by me.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/screenshot1.png', 
+            caption: 'Early concept sketches for character select.' 
+        }
+    ]}
+  />
+
+  <ProjectItem 
+    title="Move, Move, Melon!!"
+    primaryLink="https://catalogue.usc.edu/preview_course_nopop.php?catoid=11&coid=161084"
+    italicIntro="Move Move Melon is a 2026 USC Advanced Games Project, a class that brings together students of all years, as well as from other schools. MMM is a cutesy on-rails platformer, starring a hamster who makes her way through exotic locales on the back of an ice cream machine!"
+    description="I work as a 3D artist on the team, making props and obstacles using both Blender and Maya!"
+    mainImage={mmm}
+    mainImageAlt="Main Thumbnail"
+    mainCaption="Click me to see screenshots!"
+    
+    gallery={[
+        { 
+            type: 'image', 
+            src: '/assets/screenshot1.png',   
+            caption: 'Early concept sketches for character select.' 
+        }
+    ]}
+    
   />
 </section>
 
 <style>
   section {
     padding-left: 2rem;
+    margin-top:-2rem;
+  }
+
+  h1 {
+    padding-top:2rem;
+    font-family: "Kronshrink";
+    font-size: 2.5rem;
+    color: var(--accent);
+    align-items: center; /* Centering the containers */
+    text-align: center;   /* Centering the text */
   }
 </style>

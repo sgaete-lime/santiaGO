@@ -3,7 +3,9 @@ import { Image } from 'astro:assets';
 import profilePhoto from '../assets/oldheadshot.jpg';
 import cornerIcon from '../assets/pfpedit1.png'; 
 ---
-
+<head>
+    <link href="https://db.onlinewebfonts.com/c/1b3f9cb78376a36884f3908f37a42c91?family=Tiempos+Text+Regular" rel="stylesheet">
+</head>
 <section id="hero" class="hero-container">
   <div class="hero-layout">
     
@@ -54,7 +56,7 @@ import cornerIcon from '../assets/pfpedit1.png';
   .text-side {
     flex: 0 1 auto;
     text-align: left;
-    font-family: 'Kronshrink', Helvetica, Arial, sans-serif;
+    font-family: "Tiempos Text Regular", Helvetica, Arial, sans-serif;
   }
 
     p {
@@ -65,6 +67,7 @@ import cornerIcon from '../assets/pfpedit1.png';
     /* 3. CRUCIAL: Remove default margins that push the text block down */
     margin: 0; 
     font-size: 2.8rem;
+    margin-bottom:1rem;
     line-height: 1;
   }
 
@@ -72,6 +75,8 @@ import cornerIcon from '../assets/pfpedit1.png';
     margin: 0.5rem 0 0 0; /* Only a tiny bit of space between name and title */
     font-size: 1.1rem;
     opacity: 0.8;
+        font-family: "Kronshrink", Helvetica, Arial, sans-serif;
+
   }
 
   .hero-nav {
