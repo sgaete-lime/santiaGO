@@ -3,7 +3,11 @@ import ProjectItem from './ProjectItem.astro';
 import kroshrink from '../assets/Kronlogo.png';
 import tamadoki from '../assets/tamadokiCover2.png';
 import isd from '../assets/isd-0.png'
-import moom from '../assets/moom-0.png';
+import moom0 from '../assets/moom-0.png';
+import moom1 from '../assets/moom-1.png';
+import moom2 from '../assets/moom-2.png';
+import moom3 from '../assets/moom-3.png';
+import moom4 from '../assets/moom-4.png';
 import mmm from '../assets/mmm-0.png';
 ---
 <h1>PROJECTS</h1>
@@ -17,21 +21,66 @@ import mmm from '../assets/mmm-0.png';
     description="A time-loop puzzle platforming adventure! This is a jam project I developed on my own in two weeks, doing the all the art, programming, and design."
     mainImage={kroshrink}
     mainImageAlt="Main Thumbnail"
-    mainCaption="Click me to watch the trailer!"
+    mainCaption="Click me to see gameplay!"
     
     gallery={[
         { 
             type: 'video', 
             src: 'https://www.youtube.com/embed/YYfFEstUblQ', 
-            caption: 'The trailer for the project.' 
+            caption: 'A short trailer I made to advertise! It got over 50,000 views and 3,000 likes! Very proud of being able to complete this whole project in my own in just two weeks.' 
         },
         { 
             type: 'image', 
-            src: '/assets/screenshot1.png', 
-            caption: 'Early concept sketches for character select.' 
-        }
+            src: '/assets/kron-1.png', 
+            caption: 'The Kronshrink tutorial level, before that nasty time loop starts! I had to iterate on this one a lot to make it teach just enough.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/kron-2.png', 
+            caption: 'One of the first more difficult levels! There are three colors to manage, and it requires at least two time loop resets to beat.' 
+        },{ 
+            type: 'image', 
+            src: '/assets/kron-3.png', 
+            caption: 'I couldn\'t resist making dialogue, and it managed to break up the gameplay really well! I got a lot of compliments about it.'
+        },{ 
+            type: 'image', 
+            src: '/assets/kron-4.png', 
+            caption: 'One of the final levels, featuring TIME BOMBS! I won\'t spoil this one...' 
+        },
     ]}
     
+  />
+    <ProjectItem 
+    title="Idol Showdown"
+    primaryLink="https://store.steampowered.com/app/1742020/Idol_Showdown/"
+    italicIntro="Made by hololive fans, for hololive fans. Idol Showdown is the definitive fan-made hololive fighting game experience, powered by rollback netcode."
+    description="A free-to-play fighting game by Besto Games, with over 1.2 million downloads on Steam. I helped with art sprites and marketing, handling countless character animations and a few entire game trailers!"
+    mainImage={isd}
+    mainImageAlt="Main Thumbnail"
+    mainCaption="Click me to see gameplay!"
+    
+    gallery={[
+        { 
+            type: 'video', 
+            src: 'https://www.youtube.com/embed/_9wt9ByzXDU?si=4foXG2XO8fwEG5VS', 
+            caption: 'A trailer for BLAZING: BALL BASH, the Idol Showdown summer gamemode, which I edited and produced!'
+        },
+        { 
+            type: 'video', 
+            src: 'https://www.youtube.com/embed/Kdl0uo7G_ow?si=KaZM5yt3ADMs479p', 
+            caption: 'Another trailer I edited and produced! I also worked on character animations and sprites here.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/isd-1.png',   
+            caption: 'An example showdown! I worked on some of these character animations.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/isd-2.png',   
+            caption: 'A screenshot of our summer volleyball mode! I drew a lot of the custom ball skins.' 
+        },
+    ]}
   />
 
   <ProjectItem 
@@ -47,37 +96,24 @@ import mmm from '../assets/mmm-0.png';
     gallery={[
         { 
             type: 'image', 
-            src: '/assets/screenshot1.png',   
-            caption: 'Early concept sketches for character select.' 
-        }
-    ]}
-  />
-
-  <ProjectItem 
-    title="Idol Showdown"
-    primaryLink="https://store.steampowered.com/app/1742020/Idol_Showdown/"
-    italicIntro="Made by hololive fans, for hololive fans. Idol Showdown is the definitive fan-made hololive fighting game experience, powered by rollback netcode."
-    description="A free-to-play fighting game by Besto Games, with over 1.2 million downloads on Steam. I helped with art sprites and marketing, handling countless character animations and a few entire game trailers!"
-    mainImage={isd}
-    mainImageAlt="Main Thumbnail"
-    mainCaption="Click me to watch the trailer!"
-    
-    gallery={[
-        { 
-            type: 'video', 
-            src: 'https://www.youtube.com/embed/_9wt9ByzXDU?si=4foXG2XO8fwEG5VS', 
-            caption: 'A trailer for BLAZING: BALL BASH, our summer gamemode, which I edited and produced!'
-        },
-        { 
-            type: 'video', 
-            src: 'https://www.youtube.com/embed/Kdl0uo7G_ow?si=KaZM5yt3ADMs479p', 
-            caption: 'ANOTHER trailer I edited and produced!' 
+            src: '/assets/tamadoki-1.png',   
+            caption: 'Tamadoki home menu! I directed the art style and created all the UI elements.' 
         },
         { 
             type: 'image', 
-            src: '/assets/screenshot1.png',   
-            caption: 'Early concept sketches for character select.' 
-        }
+            src: '/assets/tamadoki-2.png',   
+            caption: 'He peed on the table... I did all the writing for Tamadoki. Even the bad jokes. Sorry.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/tamadoki-3.png',   
+            caption: 'Choices, choices! Tamadoki has branching storylines, so I wrote a lot of different dialogue and endings for the game.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/tamadoki-5.png',   
+            caption: 'The calendar UI I designed and drew! I still think this is really cute.' 
+        },
     ]}
   />
 
@@ -86,20 +122,30 @@ import mmm from '../assets/mmm-0.png';
     primaryLink="https://bestogameteam.itch.io/moom-last-promise"
     italicIntro="The remnants of civilization... What will you have at the end of time? A Mumei 3D platforming metroidvania."
     description="Developed in 1 month as a graduation gift. I worked as an assistant producer in a team of 12 people, doing level and movement design, alongside all UI design and general art pipeline management. I also directed and edited the game's trailer myself!"
-    mainImage={moom}
+    mainImage={moom0}
     mainImageAlt="Main Thumbnail"
-    mainCaption="Click me to watch the trailer!"
+    mainCaption="Click me to see gameplay!"
     
     gallery={[
         { 
             type: 'video', 
             src: 'https://www.youtube.com/embed/U74IoaCFNGc?si=e-OAgg_GzrKj-nUC', 
-            caption: 'The game trailer, directed and edited by me.' 
+            caption: 'The MOOM: Last Promise trailer, directed and edited by me.' 
         },
         { 
             type: 'image', 
-            src: '/assets/screenshot1.png', 
-            caption: 'Early concept sketches for character select.' 
+            src: '/assets/moom-2.png', 
+            caption: 'The journal menu UI, which I designed, drew, and implemented.' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/moom-3.png', 
+            caption: 'Cool screenshot of our rail grind mechanic. We got a lot done in just a month!' 
+        },
+        { 
+            type: 'image', 
+            src: '/assets/moom-4.png', 
+            caption: 'The starting area of Last Promise, which I contributed art direction to. Pretty!!' 
         }
     ]}
   />
@@ -111,13 +157,13 @@ import mmm from '../assets/mmm-0.png';
     description="I work as a 3D artist on the team, making props and obstacles using both Blender and Maya!"
     mainImage={mmm}
     mainImageAlt="Main Thumbnail"
-    mainCaption="Click me to see screenshots!"
+    mainCaption=""
     
     gallery={[
         { 
             type: 'image', 
             src: '/assets/screenshot1.png',   
-            caption: 'Early concept sketches for character select.' 
+            caption: 'No pictures allowed from Move, Move, Melon!! yet, sorry!!' 
         }
     ]}
     
@@ -127,11 +173,12 @@ import mmm from '../assets/mmm-0.png';
 <style>
   section {
     padding-left: 2rem;
-    margin-top:-2rem;
+    margin-top:-2.5rem;
+    margin-bottom:-3.5rem;
   }
 
   h1 {
-    padding-top:2rem;
+    padding-top:1.5rem;
     font-family: "Kronshrink";
     font-size: 2.5rem;
     color: var(--accent);

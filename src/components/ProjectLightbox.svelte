@@ -94,6 +94,7 @@
         padding: 2rem;
     }
 
+
     .lb-container {
         display: flex;
         flex-direction: column;
@@ -133,26 +134,34 @@
         border-top: 2px solid var(--accent, #F49677);
     }
 
-    .info-text h3 { margin: 0; font-size: 1.2rem; }
-    .counter { opacity: 0.5; font-size: 0.9rem; }
-    .caption { margin: 0.5rem 0 0; color: #ccc; font-style: italic; }
-
+.info-text h3 { 
+    margin: 0; 
+    font-size: 2rem; 
+    font-family: "Kronshrink", Helvetica, Arial, sans-serif;
+    margin-bottom:-0.2rem;
+}    .counter { padding-bottom:0.8rem; opacity: 0.5; font-size: 1.2rem; font-family: "Tiempos Text Regular", Helvetica, Arial, sans-serif; }
+.caption { 
+    margin: 0.5rem 0 0; 
+    color: #ccc; 
+    font-family: "Tiempos Text Regular", Helvetica, Arial, sans-serif;
+    }
     .nav {
-        position: absolute;
+        position: fixed;
         top: 50%;
         transform: translateY(-50%);
-        background: none;
+        background: rgba(0, 0, 0, 0.35);
         border: none;
         color: white;
-        font-size: 4rem;
+        font-size: 3rem;
         cursor: pointer;
-        padding: 1rem;
-        opacity: 0.5;
+        padding: 0.75rem 1rem;
+        opacity: 0.75;
         transition: opacity 0.2s;
+        z-index: 2200;
     }
     .nav:hover { opacity: 1; }
-    .nav.prev { left: -4rem; }
-    .nav.next { right: -4rem; }
+    .nav.prev { left: 1.25rem; }
+    .nav.next { right: 1.25rem; }
 
     .close-btn {
         background: #333;
