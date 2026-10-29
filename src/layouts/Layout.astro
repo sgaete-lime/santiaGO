@@ -2,6 +2,7 @@
 import dividerImg from '../assets/Webline.png'; 
 import verticalLine from '../assets/Webline-Vertical.png'; 
 
+
 interface Props {
     title: string;
 }
@@ -15,6 +16,9 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <title>{title}</title>
+        <link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
@@ -37,12 +41,10 @@ const { title } = Astro.props;
     }
 
     @font-face {
-        font-family: 'Kronshrink'; /* A name for your font */
-        src: url('fonts/Kronshrink-Regular.otf') format('otf'),
-        url('fonts/Kronshrink-Regular.otf') format('otf');
+        font-family: 'Darumadrop One', sans-serif;
         font-weight: normal;
         font-style: normal;
-        font-display: swap; /* Helps prevent render-blocking */
+        font-display: swap;
     }
     
     html, body {
