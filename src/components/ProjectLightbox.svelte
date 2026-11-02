@@ -137,7 +137,7 @@
 .info-text h3 { 
     margin: 0; 
     font-size: 2rem; 
-    font-family: "Kronshrink", Helvetica, Arial, sans-serif;
+    font-family: "Darumadrop One", Helvetica, Arial, sans-serif;
     margin-bottom:-0.2rem;
 }    .counter { padding-bottom:0.8rem; opacity: 0.5; font-size: 1.2rem; font-family: "Tiempos Text Regular", Helvetica, Arial, sans-serif; }
 .caption { 
