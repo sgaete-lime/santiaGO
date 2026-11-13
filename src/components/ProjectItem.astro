@@ -154,7 +154,7 @@ const {
     color: #eee;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     .project-item, .project-item.reversed {
       flex-direction: column;
       gap: 1rem;
@@ -164,7 +164,9 @@ const {
       flex: none;
     }
     .text-side {
-        margin-right: 0;
+      width: 100%;
+      box-sizing: border-box;
+      margin-right: 0;
     }
   }
 </style>

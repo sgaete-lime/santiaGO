@@ -16,9 +16,6 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <title>{title}</title>
-        <link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
@@ -41,8 +38,9 @@ const { title } = Astro.props;
     }
 
     @font-face {
-        font-family: 'Darumadrop One', sans-serif;
-        font-weight: normal;
+        font-family: 'Darumadrop One';
+        src: url('/assets/fonts/DarumadropOne-Regular.ttf') format('truetype');
+        font-weight: 400;
         font-style: normal;
         font-display: swap;
     }

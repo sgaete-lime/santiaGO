@@ -11,7 +11,7 @@ import moom4 from '../assets/moom-4.png';
 import mmm from '../assets/mmm-0.png';
 ---
 <h1>PROJECTS</h1>
-<section id="projects">
+<section id="projects" class="projects-section">
   
 
   <ProjectItem 
@@ -171,18 +171,25 @@ import mmm from '../assets/mmm-0.png';
 </section>
 
 <style>
-  section {
-    padding-left: 2rem;
+  .projects-section {
+    box-sizing: border-box;
+    padding: 4rem 2rem;
     margin-top:-2.5rem;
     margin-bottom:-3.5rem;
   }
 
-  h1 {
+  .projects-section h1 {
     padding-top:1.5rem;
     font-family: "Darumadrop One";
     font-size: 2.5rem;
     color: var(--accent);
     align-items: center; /* Centering the containers */
     text-align: center;   /* Centering the text */
+  }
+
+  @media (max-width: 768px) {
+    .projects-section {
+      padding: 3rem 1rem;
+    }
   }
 </style>
